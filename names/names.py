@@ -31,7 +31,7 @@ speedWidget = BinarySearchTree('Martha Mewart')
 
 f = open('names_1.txt', 'r')
 
-for line in f.readlines():
+for line in f.read().split('\n'):
     print(line)
     speedWidget.insert(line)
 
