@@ -10,24 +10,8 @@ class RingBuffer:
     self.current = self.current +1
     self.itemNum = self.current
 
-    # if self.current > self.capacity:
-    #   self.current = self.current +1
-
-    #   self.storage.append(item)
-
-    # if self.current == self.capacity:
-    #   #del self.storage[]
-
-    #   self.current = self.current +1
-
-    #   self.storage.append(item)
-
-    # for i in self.storage:
-    #   if self.storage[i] =
-
-    #   # self.current = self.current +1
-    #   self.storage.append(item)
-      
+    if self.current <= self.capacity:
+      self.storage[self.current -1] = item
     
 
     if self.current > self.capacity:
