@@ -7,6 +7,7 @@ class RingBuffer:
 
   def append(self, item):
     self.storage.append(item)
+    self.itemNum = self.current +1
 
     # if self.current > self.capacity:
     #   self.current = self.current +1
@@ -28,6 +29,7 @@ class RingBuffer:
     for i in self.storage:
       if i is not None:
         selfHold.append(i)
+        print('current',self.itemNum)
 
     return selfHold
 
