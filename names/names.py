@@ -30,7 +30,10 @@ start_time = time.time()
 speedWidget = BinarySearchTree('Martha Mewart')
 
 f = open('names_1.txt', 'r')
-speedWidget.insert(f.read().split("\n"))  # List containing 10000 names
+
+for line in f.readlines():
+    speedWidget.insert(line)
+
 f.close()
 
 f = open('names_2.txt', 'r')
@@ -43,8 +46,13 @@ f.close()
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-print(speedWidget.for_each())
+duplicates = []
+for nameoh in names_2:
+    if speedWidget.contains(names_2[nameoh]):
+        duplicates.append(names_2[nameoh])
+
+
 
 end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")

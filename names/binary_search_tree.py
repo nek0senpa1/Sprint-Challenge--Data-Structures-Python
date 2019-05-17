@@ -80,18 +80,20 @@ class BinarySearchTree:
 
 
 
-  def for_each(self, cb):
-    # stuff = []
-    cb(self.value)
+  def for_each(self):
+    stuff = []
+    stuff.append(self.value)
 
     if self.left is not None:
       # cb(self.left.value)
-      self.left.for_each(cb)
+      self.for_each(self.left)
 
 
     if self.right is not None:
       # cb(self.right.value)
-      self.right.for_each(cb)
+      self.for_each(self.right)
+
+    return stuff
 
     
 
