@@ -86,12 +86,12 @@ class BinarySearchTree:
 
     if self.left is not None:
       # cb(self.left.value)
-      self.for_each(self.left)
+      return self.for_each(self.left)
 
 
     if self.right is not None:
       # cb(self.right.value)
-      self.for_each(self.right)
+      return self.for_each(self.right)
 
     return stuff
 

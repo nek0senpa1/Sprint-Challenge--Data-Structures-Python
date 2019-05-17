@@ -32,6 +32,7 @@ speedWidget = BinarySearchTree('Martha Mewart')
 f = open('names_1.txt', 'r')
 
 for line in f.readlines():
+    print(line)
     speedWidget.insert(line)
 
 f.close()
@@ -47,12 +48,19 @@ f.close()
 #             duplicates.append(name_1)
 
 duplicates = []
-for nameoh in names_2:
-    if speedWidget.contains(names_2[nameoh]):
-        duplicates.append(names_2[nameoh])
+for i in names_2:
+    # tom = names_2[i]
+    # if speedWidget.contains(names_2[nameoh]):
+    #     duplicates.append(names_2[nameoh])
+    # print(tom)
+    # print(i)
+    if speedWidget.contains(i):
+        duplicates.append(i)
 
+
+# print(names_2)
 
 
 end_time = time.time()
-# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
